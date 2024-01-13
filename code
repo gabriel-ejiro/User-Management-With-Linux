@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# navigate to the root of the file system
+
+cd /
+
+# Create a directory for each department at the root (/) of the file system for each department.
+sudo mkdir /Engineering
+sudo mkdir /Sales
+sudo mkdir /IS
+
+# create groups for each departments
+sudo groupadd engineering_group
+sudo groupadd sales_group
+sudo groupadd is_group
+
+# create admin users for each group
+sudo useradd -m -G engineering_group -s /bin/bash engineering_admin
+sudo useradd -m -G sales_group -s /bin/bash sales_admin
+sudo useradd -m -G is_group -s /bin/bash is_admin
+
+# create two additional users for each groups
+sudo useradd -m -G engineering_group -s /bin/bash engineer1
+sudo useradd -m -G engineering_group -s /bin/bash engineer2
+
+sudo useradd -m -G sales_group -s /bin/bash salesperson1
+sudo useradd -m -G sales_group -s /bin/bash salesperson2
+
+sudo useradd -m -G is_group -s /bin/bash is_member1
+sudo useradd -m -G is_group -s /bin/bash is_member2
