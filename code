@@ -28,3 +28,59 @@ sudo useradd -m -G sales_group -s /bin/bash salesperson2
 
 sudo useradd -m -G is_group -s /bin/bash is_member1
 sudo useradd -m -G is_group -s /bin/bash is_member2
+
+# Set ownership and permissions for Engineering department
+sudo chown engineering_admin:engineering_group /Engineering
+sudo chmod 770 /Engineering
+
+# Set ownership and permissions for Sales department
+sudo chown sales_admin:sales_group /Sales
+sudo chmod 770 /Sales
+
+# Set ownership and permissions for IS department
+sudo chown is_admin:is_group /IS
+sudo chmod 770 /IS
+
+# Allow department administrators full access to their respective department directories
+sudo chmod +t /Engineering /Sales /IS
+
+# Ensure only the owner can delete files in the department directories
+sudo find /Engineering /Sales /IS -type d -exec chmod g+s {} +
+
+# Set permissions for normal users in each department
+sudo find /Engineering /Sales /IS -type d -exec chmod 770 {} +
+sudo find /Engineering /Sales /IS -type f -exec chmod 660 {} +
+
+# Create a document in the Engineering directory
+echo "This file contains confidential information for the department." | sudo tee /Engineering/confidential_info.txt
+sudo chown engineering_admin:engineering_group /Engineering/confidential_info.txt
+sudo chmod 640 /Engineering/confidential_info.txt
+
+# Create a document in the Sales directory
+echo "This file contains confidential information for the department." | sudo tee /Sales/confidential_info.txt
+sudo chown sales_admin:sales_group /Sales/confidential_info.txt
+sudo chmod 640 /Sales/confidential_info.txt
+
+# Create a document in the IS directory
+echo "This file contains confidential information for the department." | sudo tee /IS/confidential_info.txt
+sudo chown is_admin:is_group /IS/confidential_info.txt
+sudo chmod 640 /IS/confidential_info.txt
+
+# Verify user and group creation
+getent passwd Engineering_admin
+getent passwd Salesperson1
+getent group IS
+
+# Verify User's Group Assignment
+groups Engineering_admin
+groups Salesperson1
+
+# Verify Directory Creation and Permission Settings
+ls -ld /Engineering
+ls -ld /Sales
+ls -ld /IS
+
+# Verify Files in Respective Directories
+ls -l /Engineering
+ls -l /Sales
+ls -l /IS
