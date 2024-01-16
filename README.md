@@ -36,16 +36,13 @@ As the Linux Administrator for fast-growing company, you have been tasked with c
 - The department folders will ONLY be accessible by users/administrators in each of the respective 
   departments. Ensure that no one else will have permissions to the folders.
 
-Create a document in each of the department directories.
+* Create a document in each of the department directories.
 
-The ownerships on this file will be the same as the directory it is located in.
-The document should contain only one line of text that states, “This file contains confidential information for the department.”
-This file can be read by any user in the department, but can only be modified by the department administrator. No one else has permissions to this file.
+ - The ownerships on this file will be the same as the directory it is located in.
+ - The document should contain only one line of text that states, “This file contains confidential information 
+   for the department.”
+ - This file can be read by any user in the department, but can only be modified by the department 
+   administrator. No one else has permissions to this file.
 
 
-**Deliverables**
 
-Use the appropriate command to verify each user and group has been created.
-Use the appropriate command to verify each user’s group assignment.
-Use the appropriate command to verify the directory creation and the permission settings.
-Use the appropriate command to verify the files are created in their respective directories.
