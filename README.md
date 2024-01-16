@@ -2,28 +2,39 @@
 **Case Scenario**
 
 As the Linux Administrator for fast-growing company, you have been tasked with creating, modifying, and removing user accounts from the Linux server. The company has just hired 9 new employees to fill 3 newly designed departments. The departments that have been created are Engineering, Sales and IS. The server must be setup with the appropriate files, folders, users, groups and permissions to ensure a successful launch of the newly designed departments.
-Objectives
-Create a directory at the root (/) of the file system for each department. This name should reflect the department name that will use the directory.
 
-Create a group for each department. This name should reflect the department name that the group will be assigned.
+**Objectives**
+* Create a directory at the root (/) of the file system for each department. This name should reflect the 
+  department name that will use the directory.
 
-Create an administrative user for each of the departments.
+* Create a group for each department. This name should reflect the department name that the group will be 
+  assigned.
 
-The user will have a Bash login shell.
-The user will belong to the respective group for each department. This will need to be the user’s primary group.
+* Create an administrative user for each of the departments.
 
-Create two additional users for each department.
+- The user will have a Bash login shell.
+  
+- The user will belong to the respective group for each department. This will need to be the user’s primary 
+  group.
 
-The users will have a Bash login shell.
-The users will belong to their respective group for each department. This will need to be the user’s primary group.
+* Create two additional users for each department.
 
-For security reasons, the following modifications will need to be made to each of the departments' respective directories:
+- The users will have a Bash login shell.
+- The users will belong to their respective group for each department. This will need to be the user’s primary 
+  group.
 
-Ensure that the owner of each of the directories is the department administrator and the group ownership is the group for each department.
-The department administrator will have full access to their respective department directories.
-Ensure that only the owner of a file in the department’s directory can delete the file. The user will also have ownership of their respective department folders.
-Normal users in each department will have full access (Read, Write and Execute) to their respective department folders.
-The department folders will ONLY be accessible by users/administrators in each of the respective departments. Ensure that no one else will have permissions to the folders.
+* For security reasons, the following modifications will need to be made to each of the departments' 
+  respective directories:
+
+- Ensure that the owner of each of the directories is the department administrator and the group ownership is 
+  the group for each department.
+- The department administrator will have full access to their respective department directories.
+- Ensure that only the owner of a file in the department’s directory can delete the file. The user will also 
+  have ownership of their respective department folders.
+- Normal users in each department will have full access (Read, Write and Execute) to their respective 
+  department folders.
+- The department folders will ONLY be accessible by users/administrators in each of the respective 
+  departments. Ensure that no one else will have permissions to the folders.
 
 Create a document in each of the department directories.
 
